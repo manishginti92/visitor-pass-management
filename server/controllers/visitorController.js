@@ -1,5 +1,4 @@
-import Visitor from "../models/visitorModel.js";
-
+import Visitor from "../models/visitorModel.js"; 
 //  Create a new visitor
 export const createVisitor = async (req, res) => {
   try {
