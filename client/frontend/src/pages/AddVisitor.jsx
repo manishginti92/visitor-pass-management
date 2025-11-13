@@ -12,7 +12,6 @@ export default function AddVisitor() {
     await api.addVisitor(form, token);
     navigate("/dashboard");
   };
-
   return (
     <div className="container mt-5" style={{ maxWidth: "400px" }}>
       <h3>Add Visitor</h3>

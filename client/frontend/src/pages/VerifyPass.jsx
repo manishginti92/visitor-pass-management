@@ -20,7 +20,7 @@ export default function VerifyPass() {
     try {
       //  Backend URL
       const res = await axios.post("http://localhost:5000/api/visitors/verify-pass", {
-        visitorId, // backend expects this key
+        visitorId, 
       });
 
       if (res.data.success) {
@@ -61,13 +61,13 @@ export default function VerifyPass() {
           {result.valid ? (
             <div>
               <p className="text-success fw-bold"> Valid Pass</p>
-              <p>👤 Name: {result.visitor.name}</p>
-              <p>📞 Phone: {result.visitor.phone}</p>
-              <p>🎯 Purpose: {result.visitor.purpose}</p>
-              <p>🟢 Status: {result.visitor.status}</p>
+              <p> Name: {result.visitor.name}</p>
+              <p>Phone: {result.visitor.phone}</p>
+              <p> Purpose: {result.visitor.purpose}</p>
+              <p>Status: {result.visitor.status}</p>
             </div>
           ) : (
-            <p className="text-danger fw-bold">❌ Invalid Pass or Visitor Not Found</p>
+            <p className="text-danger fw-bold">Invalid Pass or Visitor Not Found</p>
           )}
         </div>
       )}

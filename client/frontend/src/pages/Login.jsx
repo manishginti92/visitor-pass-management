@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <h3>🔐 Login</h3>
+      <h3>Login</h3>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input

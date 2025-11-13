@@ -20,7 +20,7 @@ export default function Register() {
 
   return (
     <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <h3>📝 Register</h3>
+      <h3>Register</h3>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input

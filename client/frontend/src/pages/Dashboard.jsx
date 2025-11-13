@@ -1,68 +1,3 @@
-/*import React, { useEffect, useState } from "react";
-import { api } from "../api/api";
-import { Link, useNavigate } from "react-router-dom";
-
-export default function Dashboard() {
-  const [visitors, setVisitors] = useState([]);
-  const navigate = useNavigate();
-  const token = localStorage.getItem("token");
-
-  useEffect(() => {
-    api.getVisitors(token).then((data) => {
-  console.log("API Response:", data);
-  if (data.message === "Not authorized, token failed") {
-    navigate("/login");
-  } else {
-    setVisitors(Array.isArray(data) ? data : []);
-  }
-});
-
-  }, [token, navigate]);
-
-  const handleStatus = async (id, status) => {
-    await api.updateStatus(id, status, token);
-    const updated = await api.getVisitors(token);
-    setVisitors(updated);
-  };
-
-  return (
-    <div className="container mt-4">
-      <h2>📋 Visitor Dashboard</h2>
-      <Link to="/add" className="btn btn-primary mb-3">+ Add Visitor</Link>
-      <table className="table table-bordered">
-        <thead className="table-dark">
-          <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Purpose</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {visitors.map((v) => (
-            <tr key={v._id}>
-              <td>{v.name}</td>
-              <td>{v.phone}</td>
-              <td>{v.purpose}</td>
-              <td>{v.status}</td>
-              <td>
-                <button onClick={() => handleStatus(v._id, "approved")} className="btn btn-sm btn-success me-2">
-                  Approve
-                </button>
-                <button onClick={() => handleStatus(v._id, "checked-in")} className="btn btn-sm btn-info">
-                  Check-in
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-*/
-
 import React, { useEffect, useState } from "react";
 import { api } from "../api/api";
 import { Link, useNavigate } from "react-router-dom";
@@ -72,7 +7,6 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  // ✅ Fetch visitor list on load
   useEffect(() => {
     if (!token) return navigate("/login");
 
@@ -81,13 +15,10 @@ export default function Dashboard() {
       if (data.message === "Not authorized, token failed") {
         navigate("/login");
       } else {
-        // ensure it's an array
         setVisitors(Array.isArray(data) ? data : []);
       }
     });
   }, [token, navigate]);
-
-  // ✅ Update visitor status (Approve / Check-in)
   const handleStatus = async (id, status) => {
   try {
     const result = await api.updateStatus(id, status, token);
@@ -102,8 +33,6 @@ export default function Dashboard() {
     console.error("Error updating visitor:", err);
   }
 };
-
-  // ✅ Logout user
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/login");
@@ -111,9 +40,9 @@ export default function Dashboard() {
 
   return (
     <div className="container mt-4">
-      <h2>📋 Visitor Dashboard</h2>
+      <h2>Visitor Dashboard</h2>
 
-      {/* ✅ Navigation Buttons */}
+      {/*  Navigation Buttons */}
       <div className="mb-3">
         <Link to="/add" className="btn btn-primary me-2">
           + Add Visitor
@@ -127,7 +56,7 @@ export default function Dashboard() {
         </button>
       </div>
 
-      {/* ✅ Visitor Table */}
+      {/*  Visitor Table */}
       <table className="table table-bordered">
         <thead className="table-dark">
           <tr>

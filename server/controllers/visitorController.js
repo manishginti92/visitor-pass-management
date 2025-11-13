@@ -1,5 +1,4 @@
 import Visitor from "../models/visitorModel.js"; 
-//  Create a new visitor
 export const createVisitor = async (req, res) => {
   try {
     const { name, phone, purpose } = req.body;
@@ -15,8 +14,6 @@ export const createVisitor = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-// Get all visitors (for logged-in user)
 export const getVisitors = async (req, res) => {
   try {
     const visitors = await Visitor.find({ user: req.user._id });
@@ -25,8 +22,6 @@ export const getVisitors = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-// Get visitor by ID (used for Verify page)
 export const verifyVisitor = async (req, res) => {
   try {
     const visitor = await Visitor.findById(req.params.id);
@@ -38,8 +33,6 @@ export const verifyVisitor = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-// Update visitor status (Approve / Check-in)
 export const updateVisitorStatus = async (req, res) => {
   try {
     const visitor = await Visitor.findById(req.params.id);
@@ -53,8 +46,6 @@ export const updateVisitorStatus = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-// Verify pass (for QR code scanning)
 export const verifyPass = async (req, res) => {
   try {
     const { visitorId } = req.body;
