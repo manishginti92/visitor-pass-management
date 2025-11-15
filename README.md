@@ -1,45 +1,83 @@
-# Visitor Pass Management System (MERN)
-A full-stack MERN application to manage visitor entries digitally.  
-It allows admins, security staff, and employees to manage visitors, appointments, and digital visitor passes with QR codes.
+Visitor Pass Management System (MERN)
 
-##  Live Demo
+A simple MERN-based project to manage visitor entries.
+Users can register/login, add visitors, view visitor list, and verify visitor passes.
+Live Demo
 
-Frontend (Netlify): [https://your-frontend-link.netlify.app]( https://app.netlify.com/projects/extraordinary-croquembouche-58050d/)  
-Backend (Render): [https://your-backend-link.onrender.com](https://visitor-pass-management-0puz.onrender.com/)  
-Demo Video (Loom): [https://www.loom.com/share/your-video-link](https://www.loom.com/share/d682384685f94bd29d617410b2d7b1ad)
+Frontend (Netlify): https://extraordinary-croquembouche-58050d.netlify.app/
 
----
+Backend API (Render): https://visitor-pass-management-0puz.onrender.com
 
-## Features
+Demo Video (Loom): https://www.loom.com/share/d682384685f94bd29d617410b2d7b1ad
+Features
+🔐 Authentication
 
-### User Roles
-Admin: Manages system, staff, and analytics  
-Security / Frontdesk:Issues passes, scans visitors in/out  
-Employee / Host:Can invite or approve visitors  
-Visitor: Can pre-register and view digital pass  
+User registration
 
-###  Core Functionalities
-1. Authentication & Authorization (JWT-based)  
-2. Visitor Registration (details + photo)  
-3. Appointments / Pre-Registration  
-4. Pass Issuance (QR code + PDF badge)  
-5. Check-In / Check-Out (QR scanning)  
-6. Email / SMS Notifications (optional)  
-7. Dashboard & Reports (search, filter, export)
+User login (JWT-based)
 
+📝 Visitor Management
 
-##  Tech Stack
+Add new visitor
 
-Frontend: React, React Router, Axios, TailwindCSS  
-Backend: Node.js, Express.js, Mongoose, JWT  
-Database: MongoDB (Cloud via MongoDB Atlas)  
-Deployment: Netlify (frontend), Render (backend)
+View all visitors added by the user
 
+Update visitor status (Pending / Approved / Rejected)
 
-## Installation & Setup
+Verify visitor details using visitor ID
 
-Follow the steps below to run the project locally.
+📡 Backend API
 
-### 1️ Clone the Repository
+Node.js + Express REST APIs
+
+MongoDB Atlas database
+
+🛠️ Tech Stack
+Frontend
+
+React
+
+React Router
+
+Axios
+
+Backend
+
+Node.js
+
+Express.js
+
+Mongoose
+
+JWT Authentication
+
+Deployment
+
+Frontend: Netlify
+
+Backend: Render
+
+▶️ Run Locally
+1️⃣ Clone the repository
 git clone https://github.com/manishginti92/visitor-pass-management.git
 cd visitor-pass-management
+
+2️⃣ Install backend dependencies
+cd server
+npm install
+
+3️⃣ Add a .env file
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_secret
+
+4️⃣ Start backend
+npm start
+
+5️⃣ Install frontend dependencies
+cd ../client
+npm install
+npm start
+
+📷 Screenshots
+
+(Add 2–3 screenshots of your project UI here)
