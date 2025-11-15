@@ -5,7 +5,7 @@ It allows admins, security staff, and employees to manage visitors, appointments
 ##  Live Demo
 
 Frontend (Netlify): [https://your-frontend-link.netlify.app]( https://app.netlify.com/projects/extraordinary-croquembouche-58050d/)  
-Backend (Render): [https://your-backend-link.onrender.com](https://visitor-pass-management-0puz.onrender.com)  
+Backend (Render): [https://your-backend-link.onrender.com](https://visitor-pass-management-0puz.onrender.com/)  
 Demo Video (Loom): [https://www.loom.com/share/your-video-link](https://www.loom.com/share/d682384685f94bd29d617410b2d7b1ad)
 
 ---
